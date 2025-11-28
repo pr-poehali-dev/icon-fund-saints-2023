@@ -69,7 +69,7 @@ const Index = () => {
               </div>
               <div className="animate-fade-in delay-100">
                 <img
-                  src="https://cdn.poehali.dev/files/6625748c-c068-40a1-91ee-52196978d5e3.png"
+                  src="https://cdn.poehali.dev/files/627b2917-8fe1-4e81-a162-fc37454dcfc2.jpeg"
                   alt="Икона святых новомучеников"
                   className="shadow-2xl w-full rounded-lg"
                 />
@@ -118,7 +118,7 @@ const Index = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <img
-                src="https://cdn.poehali.dev/files/6625748c-c068-40a1-91ee-52196978d5e3.png"
+                src="https://cdn.poehali.dev/files/627b2917-8fe1-4e81-a162-fc37454dcfc2.jpeg"
                 alt="Чудотворная икона"
                 className="rounded-lg shadow-xl w-full"
               />
