@@ -71,7 +71,7 @@ const Index = () => {
                 <img
                   src="https://cdn.poehali.dev/files/6625748c-c068-40a1-91ee-52196978d5e3.png"
                   alt="Икона святых новомучеников"
-                  className="rounded-lg shadow-2xl w-full"
+                  className="shadow-2xl w-full rounded-lg"
                 />
               </div>
             </div>
