@@ -233,12 +233,18 @@ const Index = () => {
                   </ul>
                 </div>
                 <div className="p-6 bg-muted/50 rounded-lg">
-                  <h4 className="font-heading font-semibold text-primary mb-2">
+                  <h4 className="font-heading font-semibold text-primary mb-3">
                     Реквизиты для пожертвований
                   </h4>
-                  <p className="text-sm text-muted-foreground">
-                    Свяжитесь с нами для получения актуальных реквизитов
-                  </p>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <p><span className="font-semibold text-primary">Получатель:</span> ФОНД ИКОНЫ СВЯТЫХ НОВОМУЧЕНИКОВ ЮРИСТОВ ПЕТРОГРАДСКИХ</p>
+                    <p><span className="font-semibold text-primary">ИНН:</span> 7806632350</p>
+                    <p><span className="font-semibold text-primary">КПП:</span> 780601001</p>
+                    <p><span className="font-semibold text-primary">Счёт получателя:</span> 40703 810 3 9033 0000175</p>
+                    <p><span className="font-semibold text-primary">Банк получателя:</span> Банк «Санкт-Петербург»</p>
+                    <p><span className="font-semibold text-primary">БИК:</span> 044030790</p>
+                    <p><span className="font-semibold text-primary">К/счёт:</span> 30101810900000000790</p>
+                  </div>
                 </div>
               </div>
             </Card>
