@@ -388,7 +388,7 @@ const Index = () => {
             </div>
             <div>
               <h3 className="font-heading font-semibold text-lg mb-4">Контакты</h3>
-              <p className="text-sm text-primary-foreground/80">info@fondnovomucheniki.ru</p>
+              <p className="text-sm text-primary-foreground/80">ikona-yuristov@mail.ru</p>
             </div>
           </div>
           <Separator className="bg-primary-foreground/20 mb-8" />
