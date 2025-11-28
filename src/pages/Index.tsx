@@ -2,35 +2,40 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
+    setMobileMenuOpen(false);
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const menuItems = [
+    { id: 'home', label: 'Главная' },
+    { id: 'history', label: 'История' },
+    { id: 'icon', label: 'Икона' },
+    { id: 'projects', label: 'Проекты' },
+    { id: 'support', label: 'Поддержать' },
+    { id: 'news', label: 'Новости' },
+    { id: 'contacts', label: 'Контакты' },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <nav className="fixed top-0 w-full bg-card/95 backdrop-blur-sm border-b border-border z-50">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-heading font-semibold text-primary">
+            <h1 className="text-lg sm:text-2xl font-heading font-semibold text-primary">
               Фонд Иконы Святых Новомучеников
             </h1>
             <div className="hidden md:flex gap-6">
-              {[
-                { id: 'home', label: 'Главная' },
-                { id: 'history', label: 'История' },
-                { id: 'icon', label: 'Икона' },
-                { id: 'projects', label: 'Проекты' },
-                { id: 'support', label: 'Поддержать' },
-                { id: 'news', label: 'Новости' },
-                { id: 'contacts', label: 'Контакты' },
-              ].map((item) => (
+              {menuItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
@@ -44,19 +49,43 @@ const Index = () => {
                 </button>
               ))}
             </div>
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon">
+                  <Icon name="Menu" size={24} />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[280px]">
+                <div className="flex flex-col gap-4 mt-8">
+                  {menuItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className={`text-left text-lg font-body transition-colors py-2 ${
+                        activeSection === item.id
+                          ? 'text-accent font-semibold'
+                          : 'text-muted-foreground hover:text-foreground'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </nav>
 
       <main className="pt-20">
-        <section id="home" className="min-h-screen flex items-center justify-center py-20 px-6">
+        <section id="home" className="min-h-screen flex items-center justify-center py-16 sm:py-20 px-4 sm:px-6">
           <div className="container mx-auto max-w-6xl">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
               <div className="animate-fade-in">
-                <h2 className="text-5xl md:text-6xl font-heading font-bold text-primary mb-6 leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-heading font-bold text-primary mb-4 sm:mb-6 leading-tight">
                   Фонд Иконы Святых Новомучеников Юристов Петроградских
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                   Сохранение памяти и духовного наследия святых новомучеников, пострадавших за веру в годы гонений
                 </p>
                 <Button
@@ -80,12 +109,12 @@ const Index = () => {
 
         <Separator className="my-0" />
 
-        <section id="history" className="py-20 px-6 bg-muted/30">
+        <section id="history" className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-4xl font-heading font-bold text-primary mb-12 text-center">
               История Фонда и Святых Новомучеников
             </h2>
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <Card className="p-8">
                 <h3 className="text-2xl font-heading font-semibold text-primary mb-4">
                   Святые Новомученики Юристы Петроградские
@@ -111,7 +140,7 @@ const Index = () => {
 
         <Separator className="my-0" />
 
-        <section id="icon" className="py-20 px-6">
+        <section id="icon" className="py-12 sm:py-20 px-4 sm:px-6">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-4xl font-heading font-bold text-primary mb-12 text-center">
               О Чудотворной Иконе
@@ -139,12 +168,12 @@ const Index = () => {
 
         <Separator className="my-0" />
 
-        <section id="projects" className="py-20 px-6 bg-muted/30">
+        <section id="projects" className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-4xl font-heading font-bold text-primary mb-12 text-center">
               Деятельность и Проекты Фонда
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
                   icon: 'BookOpen',
@@ -199,7 +228,7 @@ const Index = () => {
 
         <Separator className="my-0" />
 
-        <section id="support" className="py-20 px-6">
+        <section id="support" className="py-12 sm:py-20 px-4 sm:px-6">
           <div className="container mx-auto max-w-3xl">
             <h2 className="text-4xl font-heading font-bold text-primary mb-12 text-center">
               Как Поддержать Фонд
@@ -253,12 +282,12 @@ const Index = () => {
 
         <Separator className="my-0" />
 
-        <section id="news" className="py-20 px-6 bg-muted/30">
+        <section id="news" className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-4xl font-heading font-bold text-primary mb-12 text-center">
               Новости и События
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
                   date: '15 ноября 2024',
@@ -292,7 +321,7 @@ const Index = () => {
 
         <Separator className="my-0" />
 
-        <section id="contacts" className="py-20 px-6">
+        <section id="contacts" className="py-12 sm:py-20 px-4 sm:px-6">
           <div className="container mx-auto max-w-3xl">
             <h2 className="text-4xl font-heading font-bold text-primary mb-12 text-center">
               Контакты
@@ -328,9 +357,9 @@ const Index = () => {
         </section>
       </main>
 
-      <footer className="bg-primary text-primary-foreground py-12 px-6">
+      <footer className="bg-primary text-primary-foreground py-8 sm:py-12 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
             <div>
               <h3 className="font-heading font-semibold text-lg mb-4">О Фонде</h3>
               <p className="text-sm text-primary-foreground/80 leading-relaxed">
