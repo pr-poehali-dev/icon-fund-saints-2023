@@ -392,9 +392,7 @@ const Index = () => {
             </div>
           </div>
           <Separator className="bg-primary-foreground/20 mb-8" />
-          <p className="text-center text-sm text-primary-foreground/60">
-            © 2024 Фонд Иконы Святых Новомучеников Юристов Петроградских. Все права защищены.
-          </p>
+          <p className="text-center text-sm text-primary-foreground/60">© 2025 Фонд Иконы Святых Новомучеников Юристов Петроградских. Все права защищены.</p>
         </div>
       </footer>
     </div>
