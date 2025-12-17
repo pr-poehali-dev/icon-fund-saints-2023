@@ -420,7 +420,33 @@ const Index = () => {
             </div>
             <div>
               <h3 className="font-heading font-semibold text-lg mb-4">Контакты</h3>
-              <p className="text-sm text-primary-foreground/80">ikona-yuristov@mail.ru</p>
+              <p className="text-sm text-primary-foreground/80 mb-4">ikona-yuristov@mail.ru</p>
+              <div className="flex gap-4 mt-4">
+                <a 
+                  href="https://vk.com/sdaproject?from=groups" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  aria-label="VKontakte"
+                >
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor" fillOpacity="0.1"/>
+                    <path d="M16.8 22.4c-6.8 0-10.7-4.6-10.9-12.4h3.4c.2 5.6 2.6 8 4.5 8.5V10h3.2v4.8c1.9-.2 3.8-2.4 4.5-4.8h3.2c-.5 3-2.6 5.2-4.1 6.1 1.5.8 3.8 2.7 4.7 6.3h-3.5c-.7-2.4-2.4-4.2-4.7-4.5v4.5h-.3z" fill="currentColor"/>
+                  </svg>
+                </a>
+                <a 
+                  href="https://t.me/fondPetrograd" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                  aria-label="Telegram"
+                >
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="currentColor" fillOpacity="0.1"/>
+                    <path d="M23.3 8.7l-3.1 14.6c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.5.5-1 .5l.3-4.6 9-8.1c.4-.3-.1-.5-.6-.2l-11.1 7-4.3-1.3c-.9-.3-.9-1 .2-1.4l16.8-6.5c.8-.3 1.5.2 1.2 1.3z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
           <Separator className="bg-primary-foreground/20 mb-8" />
