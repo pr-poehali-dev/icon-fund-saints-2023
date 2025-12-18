@@ -316,6 +316,15 @@ const Index = () => {
               <div className="flex gap-4 sm:gap-6 min-w-max">
                 {[
                   {
+                    date: '18 декабря 2025',
+                    title: 'История создания иконы в главном журнале дорожной отрасли',
+                    description: 'В декабрьском номере журнала «Путевой навигатор» — официального издания АНП «Объединение ДСТ» — вышла статья об истории создания иконы святых Новомучеников юристов Петроградских в церкви Рождества Христова на Песках. Публикация рассказывает о том, как более 100 лет назад началась история массовых репрессий, и как сегодня икона снова звучит по-новому, требуя особого переосмысления.',
+                    images: [
+                      'https://cdn.poehali.dev/files/photo_5341792440156884776_y.jpg',
+                      'https://cdn.poehali.dev/files/photo_5341792440156884759_y.jpg',
+                    ],
+                  },
+                  {
                     date: '16 декабря 2025',
                     title: 'Встреча с уполномоченным по правам человека',
                     description: 'Сегодня президент фонда Артём Дмитриевич Баконин встретился с представительницей правозащитных органов города Санкт-Петербурга — уполномоченным по правам человека Агапитовой Светланой Юрьевной, преподнеся ей ценную иконописную работу. Икона посвящена Святым Новомученикам юристам Петроградским, которые были канонизированы Русской Православной Церковью за свою верность христианской вере и приверженность нравственным принципам во времена жестоких гонений начала XX века.',
@@ -366,9 +375,21 @@ const Index = () => {
                     <h3 className="text-xl font-heading font-semibold text-primary mb-3">
                       {news.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                       {news.description}
                     </p>
+                    {news.images && news.images.length > 0 && (
+                      <div className="grid grid-cols-2 gap-2 mt-4">
+                        {news.images.map((img, imgIndex) => (
+                          <img 
+                            key={imgIndex}
+                            src={img} 
+                            alt={`${news.title} - фото ${imgIndex + 1}`}
+                            className="w-full h-auto rounded-md object-cover"
+                          />
+                        ))}
+                      </div>
+                    )}
                   </Card>
                 ))}
               </div>
